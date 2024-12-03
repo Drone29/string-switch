@@ -5,6 +5,24 @@
 
 int main(int argc, char** argv){
 
+    // example
+    if (argc > 1) {
+        FNVString hash(argv[1]);
+        switch (hash) {
+            case FNVString("abc"):
+                std::cout << "first case triggered" << std::endl;
+                break;
+            case FNVString("123"):
+                std::cout << "second case triggered" << std::endl;
+                break;
+            case FNVString("Hello World!"):
+                std::cout << "third case triggered" << std::endl;
+                break;
+            default:
+                std::cout << "Unknown case: " << hash.get_str() << std::endl;
+        }
+    }
+
     const int iterations = 1000000;
 
     std::cout << "Num iterations: " << iterations << "\n" << std::endl;
